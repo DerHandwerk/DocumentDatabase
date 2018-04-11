@@ -6,9 +6,13 @@ os:
 
 matrix:
   include:
+    - os: linux
+      env:
+        - SETUP="./setup-linux.sh"
+  include:
     - os: osx
       env:
-        - SETUP=""
+        - SETUP="./setup-osx.sh"
 
 before_install:
     - eval "${SETUP}"
